@@ -1,0 +1,117 @@
+/* estilos globales y colores de fondo */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #ffd700; 
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estiliza la cabecera */
+header {
+    background-color: #ffffff; /* Fondo blanco para la cabecera */
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    color: #000;
+}
+
+/* Estilos para la sección de productos */
+#seccion-producto {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#busc-box {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 80%; 
+    font-size: 16px;
+}
+
+/* Contenedor para los productos */
+.producto-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos individuales para cada producto */
+.producto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px; 
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Imágenes de los productos */
+.producto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Título del producto */
+.titulo-producto {
+    color: #000;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+/* Precio del producto */
+.producto-precio {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el footer */
+footer .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .redes-sociales ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer .redes-sociales li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer .redes-sociales a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+footer .redes-sociales a:hover {
+    text-decoration: underline;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .producto-container {
+        flex-direction: column;
+    }
+    
+    .producto {
+        width: 80%; /* Los productos toman más ancho en pantallas pequeñas */
+    }
+    
+    #busc-box {
+        width: 90%; /* El buscador toma más ancho en pantallas pequeñas */
+    }
+}
