@@ -1,0 +1,333 @@
+header {
+    background-color: rgb(199, 10, 224);
+    color: rgb(23, 0, 231);
+    text-align:center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 43px;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: rgba(56, 51, 51, 0.788);
+    text-decoration: none;
+}
+
+header img {
+    width: 80px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+header h1 {
+    width: 100px;
+    position: absolute;
+    top: 30px;
+    left:10rem;
+    margin:0%;
+    white-space: nowrap;
+}
+
+body {
+    margin: 0 auto; /* Esto centrará el cuerpo y le dará márgenes automáticos a los lados */
+    max-width: 1850px; /* Puedes ajustar este valor según tus preferencias */
+    padding: 20px; /* Esto agrega un poco de espacio entre el contenido y los bordes del cuerpo */
+}
+main {
+    overflow: hidden; /* Establece un contenedor para los elementos flotantes */
+    margin: 40px; /* Añade margen alrededor del contenido en el main */
+}
+
+
+
+main div {
+    width: 80%; /* Establece un ancho fijo para los divs */
+    margin: 0 auto; /* Centra los divs horizontalmente */
+    text-align: center; /* Centra el contenido dentro de los divs */
+    margin-bottom: 20px; /* Espaciado inferior entre los divs */
+}
+
+main img {
+    margin-top: 10px; /* Establece el margen superior entre las imágenes y los divs */
+    height: 420px;
+    border-radius: 10px;
+}
+#imagen1 {
+    top: -9.29%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+}
+
+#imagen2{
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+main img {
+    margin-right: 45px; /* Ajusta este valor según la separación que desees entre las imágenes */
+}
+main h2 {
+    font-size: 50px; /* Ajusta el tamaño de la fuente del título */
+}
+
+main p {
+    font-size: 20px; /* Ajusta el tamaño de la fuente del párrafo */
+}
+
+footer {
+    background-color: #333; /* Fondo gris oscuro para el footer */
+    color: white; /* Color de texto blanco para el footer */
+    text-align: center; /* Centra el contenido del footer */
+    padding: 20px 0; /* Añade espacio interno al footer */
+}
+@media only screen and (max-width: 752px) {
+    header {
+        padding: 20px; /* Reduce el relleno del encabezado para pantallas más pequeñas */
+    }
+
+    nav {
+        margin-left: 0; /* Elimina el margen izquierdo automático para el menú de navegación */
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna para los elementos del menú */
+        align-items: center; /* Centra los elementos del menú */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Agrega un espacio vertical entre los elementos del menú */
+    }
+
+    header img {
+        width: 60px; /* Reduce el tamaño del logotipo para adaptarse mejor a pantallas más pequeñas */
+    }
+
+    header h1 {
+        font-size: 20px; /* Reduce el tamaño del texto del encabezado */
+        top: 10px; /* Ajusta la posición del título */
+        left: 50%; /* Centra horizontalmente el título */
+        transform: translateX(-50%); /* Centra horizontalmente el título */
+    }
+
+    main {
+        padding: 10px; /* Reduce el relleno del cuerpo principal */
+    }
+
+    main div {
+        width: 100%; /* Establece el ancho al 100% para que los elementos ocupen toda la pantalla */
+        margin: 20px 0; /* Agrega un espacio vertical entre los elementos */
+        float: none; /* Elimina la propiedad float para que los elementos se apilen verticalmente */
+        text-align: center; /* Centra el contenido de los elementos */
+    }
+
+    main img {
+        width: 100%; /* Establece el ancho de las imágenes al 100% para que se ajusten al contenedor */
+        height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+    }
+
+    main h2 {
+        font-size: 30px; /* Reduce el tamaño del título */
+    }
+
+    main p {
+        font-size: 16px; /* Reduce el tamaño del párrafo */
+    }
+}
+
+#contacto-formulario {
+    background-color: #f9f9f9; /* Fondo gris claro para el formulario */
+    padding: 20px; /* Añade espacio interno al formulario */
+    border-radius: 10px; /* Borde redondeado para el formulario */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para el formulario */
+}
+
+#contacto-formulario h2 {
+    color: #333; /* Color del título del formulario */
+    margin-bottom: 20px; /* Espaciado inferior para el título del formulario */
+}
+
+#contacto-formulario label {
+    display: block; /* Mostrar las etiquetas en una línea diferente */
+    margin-bottom: 5px; /* Espaciado inferior para las etiquetas */
+    color: #666; /* Color de texto para las etiquetas */
+}
+
+#contacto-formulario input[type="text"],
+#contacto-formulario input[type="email"],
+#contacto-formulario input[type="tel"],
+#contacto-formulario textarea,
+#contacto-formulario select {
+    width: 100%; /* Ancho completo para los campos de entrada */
+    padding: 10px; /* Añade espacio interno a los campos de entrada */
+    margin-bottom: 15px; /* Espaciado inferior entre los campos de entrada */
+    border: 1px solid #ccc; /* Borde delgado para los campos de entrada */
+    border-radius: 5px; /* Borde redondeado para los campos de entrada */
+}
+
+#contacto-formulario select {
+    width: 100%; /* Ancho completo para los selects */
+}
+
+#contacto-formulario input[type="submit"] {
+    background-color: #4CAF50; /* Color de fondo para el botón de enviar */
+    color: white; /* Color del texto para el botón de enviar */
+    padding: 15px 20px; /* Añade espacio interno al botón de enviar */
+    border: none; /* Quita el borde del botón de enviar */
+    border-radius: 5px; /* Borde redondeado para el botón de enviar */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón de enviar */
+    font-size: 16px; /* Tamaño del texto para el botón de enviar */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+#contacto-formulario input[type="submit"] {
+    background-color: #4CAF50; /* Color de fondo para el botón de enviar */
+    color: white; /* Color del texto para el botón de enviar */
+    padding: 15px 20px; /* Añade espacio interno al botón de enviar */
+    border: none; /* Quita el borde del botón de enviar */
+    border-radius: 5px; /* Borde redondeado para el botón de enviar */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón de enviar */
+    font-size: 16px; /* Tamaño del texto para el botón de enviar */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el color de fondo y el color del texto */
+}
+
+#contacto-formulario input[type="submit"]:hover {
+    background-color: #45a049; /* Cambia el color de fondo al pasar el cursor sobre el botón de enviar */
+    color: #fff; /* Cambia el color del texto al pasar el cursor sobre el botón de enviar */
+}
+
+/* Media query para tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    header {
+        padding: 20px; /* Ajusta el relleno del encabezado para tablet */
+    }
+
+    nav {
+        margin-left: 0; /* Elimina el margen izquierdo automático para el menú de navegación en tablet */
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna para los elementos del menú en tablet */
+        align-items: center; /* Centra los elementos del menú en tablet */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Agrega un espacio vertical entre los elementos del menú en tablet */
+    }
+
+    header img {
+        width: 60px; /* Reduce el tamaño del logotipo para tablet */
+    }
+
+    header h1 {
+        font-size: 20px; /* Reduce el tamaño del texto del encabezado en tablet */
+        top: 10px; /* Ajusta la posición del título en tablet */
+        left: 50%; /* Centra horizontalmente el título en tablet */
+        transform: translateX(-50%); /* Centra horizontalmente el título en tablet */
+    }
+
+    main {
+        padding: 10px; /* Reduce el relleno del cuerpo principal en tablet */
+    }
+
+    main div {
+        width: 100%; /* Establece el ancho al 100% para que los elementos ocupen toda la pantalla en tablet */
+        margin: 20px 0; /* Agrega un espacio vertical entre los elementos en tablet */
+        float: none; /* Elimina la propiedad float para que los elementos se apilen verticalmente en tablet */
+        text-align: center; /* Centra el contenido de los elementos en tablet */
+    }
+
+    main img {
+        width: 100%; /* Establece el ancho de las imágenes al 100% para que se ajusten al contenedor en tablet */
+        height: auto; /* Ajusta la altura automáticamente para mantener la proporción en tablet */
+    }
+
+    main h2 {
+        font-size: 30px; /* Reduce el tamaño del título en tablet */
+    }
+
+    main p {
+        font-size: 16px; /* Reduce el tamaño del párrafo en tablet */
+    }
+}
+
+/* Media query para PC de escritorio */
+@media only screen and (min-width: 1024px) {
+    header {
+        padding: 43px; /* Restaura el relleno original del encabezado para PC de escritorio */
+    }
+
+    nav {
+        margin-left: auto; /* Restaura el margen izquierdo automático para el menú de navegación en PC de escritorio */
+    }
+
+    nav ul {
+        flex-direction: row; /* Restaura la dirección del flexbox a fila para los elementos del menú en PC de escritorio */
+        align-items: center; /* Centra los elementos del menú en PC de escritorio */
+    }
+
+    nav ul li {
+        margin-left: 20px; /* Restaura el margen izquierdo entre los elementos del menú en PC de escritorio */
+    }
+
+    header img {
+        width: 80px; /* Restaura el tamaño original del logotipo para PC de escritorio */
+    }
+
+    header h1 {
+        font-size: 50px; /* Restaura el tamaño original del texto del encabezado para PC de escritorio */
+        top: 30px; /* Restaura la posición del título para PC de escritorio */
+        left:10rem; /* Restaura la posición del título para PC de escritorio */
+    }
+
+    main {
+        padding: 20px; /* Restaura el relleno original del cuerpo principal para PC de escritorio */
+    }
+
+    main div {
+        width: calc(50% - 60px); /* Restaura el ancho original de los divs para PC de escritorio */
+        margin: 0 px; /* Restaura los márgenes horizontalmente para PC de escritorio */
+        float: left; /* Restaura la propiedad float para PC de escritorio */
+        text-align: left; /* Restaura el alineamiento del texto a la izquierda para PC de escritorio */
+    }
+
+    main img {
+        margin-right: 45px; /* Restaura el margen derecho entre las imágenes y los divs para PC de escritorio */
+    }
+
+    main h2 {
+        font-size: 50px; /* Restaura el tamaño original del título para PC de escritorio */
+    }
+
+    main p {
+        font-size: 20px; /* Restaura el tamaño original del párrafo para PC de escritorio */
+    }
+}
