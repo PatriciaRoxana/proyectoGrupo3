@@ -1,0 +1,55 @@
+
+/* estilos globales y colores de fondo */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e7e0b5; 
+    font-family: 'Arial', sans-serif;
+}
+
+.tituloPrincipal {
+    font-size: 60px;
+    color: #000;
+    font-family: Open+Sans:ital;
+    text-align: center;
+}
+
+.subTitulo {
+    color: #000;
+    font-family: Open+Sans:ital;
+    margin-left: 150px;
+}
+
+.textoP {
+    margin-left: 150px;
+    margin-right: 150px;
+    white-space: 600px;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    color: #000;
+    text-align: justify;
+}
+
+.imagenTienda {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.ImgAlinear{
+    width: 550px;
+    height: 450px;
+    margin: 0 5px;
+    border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+    .imagenTienda {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ImgAlinear{
+        margin-bottom: 10px;
+    }
+}
