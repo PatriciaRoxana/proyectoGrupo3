@@ -10,13 +10,13 @@ body {
 .tituloPrincipal {
     font-size: 60px;
     color: #000;
-    font-family: Open+Sans:ital;
-    text-align: center;
+    font-family: 'Open Sans', italic;
+    text-align:  center;
 }
 
 .subTitulo {
     color: #000;
-    font-family: Open+Sans:ital;
+    font-family: 'Open Sans', italic;
     margin-left: 150px;
 }
 
