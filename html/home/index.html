@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/home/style.css">
+    <link rel="stylesheet" href="../../css/home/btn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Perfumería</title>
+</head>
+<!-- Contenedor para el navbar -->
+<header id="navbarContainer"></header>
+<body>
+    <section class="contenido">
+        <div class="contenido_lectura">
+        <h2> <strong>La esencia que define tu estilo </strong>  <span>Perfumes únicos y sofisticados para dejar una impresion inolvidable</span></h2>
+        
+        <button>Explora todos los productos</button>
+        </div>
+        <img src="../../img/home/imagen_portada.png" alt="Foto de 3 imágenes de perfumes">
+        
+    </section>
+    <section class="mas-vendidos">
+        <article>
+            <h2>Descubre los más vendidos</h2>
+        </article>
+        <article>
+            <div class="gallery">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.72158.jpg" alt="foto de un perfume">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.16657.jpg" alt="foto de un perfume">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.40031.jpg" alt="foto de un perfume">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.55858.jpg" alt="foto de un perfume">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.3747.jpg" alt="foto de un perfume">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.1460.jpg" alt="foto de un perfume">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.37735.jpg" alt="foto de un perfume">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.39681.jpg" alt="foto de un perfume">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.704.jpg" alt="foto de un perfume">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.53.jpg" alt="foto de un perfume">
+                <img src="https://fraguru.com/mdimg/perfume/375x500.15210.jpg" alt="foto de un perfume">
+              </div>
+        </article>
+    <hr>
+    </section>
+    <section>
+        <section class="btn-mostrar-mas">
+            <a>
+              <span class="text">Mostrar más</span>
+              <span class="line -right"></span>
+              <span class="line -top"></span>
+              <span class="line -left"></span>
+              <span class="line -bottom"></span>
+            </a>
+          </section>
+    </section>
+        <script src="script.js"></script>
+       <!-- Contenedor donde se cargará el btn de wsap -->
+    <div id="contenido"></div>
+    
+    <!--  script para mostrar el boton de mostrar más -->
+    <script src="../../js/java.js"></script>
+
+    <!-- Script para llamar a btn-wsap.index -->
+    <script>
+        // Obtener el contenido del archivo HTML
+        fetch('../../html/home/btn-wsap.html')
+            .then(response => response.text())
+            .then(data => {
+                // Insertar el contenido en el contenedor
+                document.getElementById('contenido').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error al cargar el archivo HTML:', error);
+            });
+        </script>
+    <script>
+        // Función para cargar el contenido del navbar
+        fetch('../../html/home/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbarContainer').innerHTML = data;
+            });
+        
+        // Función para cargar el contenido del footer
+        fetch('../../html/home/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footerContainer').innerHTML = data;
+            });
+        </script>
+     
+        <!-- <script>
+            Todavía no va a ser aplicado
+         // Función para obtener imágenes de perfumes de la API de Unsplash
+         function loadPerfumeImages() {
+            const accessKey = 'TU_UNSPLASH_ACCESS_KEY'; // Reemplaza con tu clave de acceso de Unsplash
+            const query = 'perfume';
+            const url = `https://api.unsplash.com/search/photos?query=${query}&client_id=${accessKey}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const gallery = document.getElementById('perfume-gallery');
+                    gallery.innerHTML = ''; // Limpiar cualquier contenido anterior
+
+                    data.results.forEach(photo => {
+                        const img = document.createElement('img');
+                        img.src = photo.urls.small;
+                        img.alt = photo.alt_description || 'Imagen de perfume';
+                        gallery.appendChild(img);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al cargar las imágenes de la API:', error);
+                });
+        }
+
+        // Cargar imágenes de perfumes al cargar el documento
+        document.addEventListener('DOMContentLoaded', loadPerfumeImages);
+    </script> -->
+    
+</body>
+<!-- Contenedor para el footer -->
+<div id="footerContainer"></div>
+</html>
