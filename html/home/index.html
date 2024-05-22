@@ -16,7 +16,9 @@
         <div class="contenido_lectura">
         <h2> <strong>La esencia que define tu estilo </strong>  <span>Perfumes únicos y sofisticados para dejar una impresion inolvidable</span></h2>
         
-        <button>Explora todos los productos</button>
+        <!-- Se va a implementar más tarde este boton -->
+        <!--  <button>Explora todos los productos</button> -->
+        
         </div>
         <img src="../../img/home/imagen_portada.png" alt="Foto de 3 imágenes de perfumes">
         
@@ -53,26 +55,14 @@
             </a>
           </section>
     </section>
-        <script src="script.js"></script>
-       <!-- Contenedor donde se cargará el btn de wsap -->
-    <div id="contenido"></div>
+    <!-- Contenedor para el footer -->
+    <div id="footerContainer"></div>
+       
     
     <!--  script para mostrar el boton de mostrar más -->
     <script src="../../js/java.js"></script>
 
-    <!-- Script para llamar a btn-wsap.index -->
-    <script>
-        // Obtener el contenido del archivo HTML
-        fetch('../../html/home/btn-wsap.html')
-            .then(response => response.text())
-            .then(data => {
-                // Insertar el contenido en el contenedor
-                document.getElementById('contenido').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error al cargar el archivo HTML:', error);
-            });
-        </script>
+   
     <script>
         // Función para cargar el contenido del navbar
         fetch('../../html/home/navbar.html')
@@ -88,38 +78,7 @@
                 document.getElementById('footerContainer').innerHTML = data;
             });
         </script>
-     
-        <!-- <script>
-            Todavía no va a ser aplicado
-         // Función para obtener imágenes de perfumes de la API de Unsplash
-         function loadPerfumeImages() {
-            const accessKey = 'TU_UNSPLASH_ACCESS_KEY'; // Reemplaza con tu clave de acceso de Unsplash
-            const query = 'perfume';
-            const url = `https://api.unsplash.com/search/photos?query=${query}&client_id=${accessKey}`;
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    const gallery = document.getElementById('perfume-gallery');
-                    gallery.innerHTML = ''; // Limpiar cualquier contenido anterior
-
-                    data.results.forEach(photo => {
-                        const img = document.createElement('img');
-                        img.src = photo.urls.small;
-                        img.alt = photo.alt_description || 'Imagen de perfume';
-                        gallery.appendChild(img);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error al cargar las imágenes de la API:', error);
-                });
-        }
-
-        // Cargar imágenes de perfumes al cargar el documento
-        document.addEventListener('DOMContentLoaded', loadPerfumeImages);
-    </script> -->
     
 </body>
-<!-- Contenedor para el footer -->
-<div id="footerContainer"></div>
+
 </html>
