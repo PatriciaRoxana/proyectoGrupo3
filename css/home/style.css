@@ -63,28 +63,6 @@ body{
     
   }
   
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
-footer {
-    background-color: aliceblue;
-    padding: 20px 10px;
-  }
-  /* Sets all link texts to white and puts margin to the left and right */
-
-.profiles{
-        margin-right: 7%;
-        color: black;
-        margin-left: auto;
-        align-items: end;
-    }
-  
-footer a:hover 
-{
-   border-bottom: 2px solid #9867C5;
-}
 
 .mas-vendidos h2 {
     display: flex;
@@ -164,27 +142,6 @@ body {
     box-shadow: -7px -7px 20px rgba(0, 0, 0, 0.2), 7px 7px 20px rgba(0, 0, 0, 0.2);
 }
 
-.grid-3 {
-    display: grid;
-    grid-template-columns: 100%; /* Cambiado a una columna para dispositivos pequeños */
-    gap: 40px;
-}
-
-footer {
-    background-color: aliceblue;
-    padding: 20px 10px;
-}
-
-.profiles {
-    margin-right: 7%;
-    color: black;
-    margin-left: auto;
-    align-items: end;
-}
-
-footer a:hover {
-    border-bottom: 2px solid #9867C5;
-}
 
 .mas-vendidos h2 {
     display: flex;
