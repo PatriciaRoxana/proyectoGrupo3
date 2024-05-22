@@ -8,11 +8,15 @@
     
     <link rel="stylesheet" href="../../css/producto/estilos-modal.css">
     <link rel="stylesheet" href="../../css/producto/productos-estilos.css">
+    <link rel="stylesheet" href="../../css/home/footer.css">
+    <link rel="stylesheet" href="../../css/home/navbar.css">
 </head>
+
+
 <body>
-    <header>
-        <h1>Productos</h1>
-    </header>
+    <!-- Contenedor para el navbar -->
+    <header id="navbarContainer"></header>
+    
     <main>
         
         <!-- sección de productos buscador -->
@@ -28,7 +32,7 @@
                 
                 <!-- Producto 1 -->
                 <div class="producto" data-name="Ambientadores para Salón" descripcion-producto="Perfume Ambientadores para Salón..">
-                    <img src="../../img/producto/Ambientadores para Salón.jpg "alt="Ambientadores para Salón">
+                    <img src="../../img/producto/Ambientadores para Salón.jpg" alt="Ambientadores para Salón">
                     <h3 class="titulo-producto">Ambientadores para Salón</h3>
                     <p class="producto-precio">399,00 ARS</p>
                 </div>
@@ -64,10 +68,7 @@
                 </div>
                  <!-- Producto 7 -->
                  <div class="producto" data-name="Velentino Perfume">
-
-                    <img src="../../img/producto/Velentino Perfume.jpg "alt="Velentino Perfume">
->>
->>>>> Stashed changes
+                    <img src="../../img/producto/Velentino Perfume.jpg" alt="Velentino Perfume">
                     <h3 class="titulo-producto">Velentino Perfume</h3>
                     <p class="producto-precio">399,00 ARS</p>
                 </div>
@@ -75,7 +76,8 @@
         </section>
         
     </main>
-    <footer>
+    <div id="footerContainer"></div>
+    <!-- <footer>
         <div class="footer">
             <p>&copy; 2024 Omega Perfumes. Todos los derechos reservados.</p>
             <p>Contáctanos: info@omegaperfumes.com</p>
@@ -88,7 +90,8 @@
                 </ul>
             </div>
         </div>
-    </footer>
+        
+    </footer> -->
     <!-- Contenedor del Modal  -->
     <div id="modal" class="modal">
         <div class="modal-contenido">
@@ -106,60 +109,75 @@
     
 
     
-     <script>
+        <script>
     
-    document.addEventListener('DOMContentLoaded', function() {
-    var productos = document.querySelectorAll('.producto');
-    var modal = document.getElementById('modal');
-    var modalImg = document.getElementById('modal-img');
-    var modalTitulo = document.getElementById('modal-titulo');
-    var modalDescription = document.getElementById('modal-description'); // Agregar esta línea
-    var modalPrecio = document.getElementById('modal-precio');
-    var cerrarModal = document.querySelector('.cerrar'); // Cambiar a querySelector y '.cerrar'
+        document.addEventListener('DOMContentLoaded', function() {
+        var productos = document.querySelectorAll('.producto');
+        var modal = document.getElementById('modal');
+        var modalImg = document.getElementById('modal-img');
+        var modalTitulo = document.getElementById('modal-titulo');
+        var modalDescription = document.getElementById('modal-description'); // Agregar esta línea
+        var modalPrecio = document.getElementById('modal-precio');
+        var cerrarModal = document.querySelector('.cerrar'); // Cambiar a querySelector y '.cerrar'
 
-    function openModal(producto) {
-        modal.style.display = "block";
-        modalImg.src = producto.querySelector('img').src;
-        modalTitulo.textContent = producto.querySelector('.titulo-producto').textContent;
-        modalPrecio.textContent = producto.querySelector('.producto-precio').textContent;
-        modalDescription.textContent = producto.getAttribute('descripcion-producto');
-    }
+        function openModal(producto) {
+            modal.style.display = "block";
+            modalImg.src = producto.querySelector('img').src;
+            modalTitulo.textContent = producto.querySelector('.titulo-producto').textContent;
+            modalPrecio.textContent = producto.querySelector('.producto-precio').textContent;
+            modalDescription.textContent = producto.getAttribute('descripcion-producto');
+        }
 
-    productos.forEach(function(producto) {
-        producto.addEventListener('click', function() {
-            openModal(producto);
+        productos.forEach(function(producto) {
+            producto.addEventListener('click', function() {
+                openModal(producto);
+            });
+        });
+
+        cerrarModal.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         });
     });
 
-    cerrarModal.addEventListener('click', function() {
-        modal.style.display = "none";
-    });
 
-    window.addEventListener('click', function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    });
-});
-
-
-    //     <!--function buscarProductos() {
-    //     var input, filter, productos, producto, i, txtValue;
-    //     input = document.getElementById('search-box');
-    //     filter = input.value.toUpperCase();
-    //     productos = document.getElementById('productos');
-    //     producto = productos.getElementsByClassName('producto-item');
-    
-    //     for (i = 0; i < producto.length; i++) {
-    //         txtValue = producto[i].textContent || producto[i].innerText;
-    //         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-    //             producto[i].style.display = "";
-    //         } else {
-    //             producto[i].style.display = "none";
-    //         }
-    //     }
-    // }-->
-    </script> 
-    
+        //     <!--function buscarProductos() {
+        //     var input, filter, productos, producto, i, txtValue;
+        //     input = document.getElementById('search-box');
+        //     filter = input.value.toUpperCase();
+        //     productos = document.getElementById('productos');
+        //     producto = productos.getElementsByClassName('producto-item');
+        
+        //     for (i = 0; i < producto.length; i++) {
+        //         txtValue = producto[i].textContent || producto[i].innerText;
+        //         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        //             producto[i].style.display = "";
+        //         } else {
+        //             producto[i].style.display = "none";
+        //         }
+        //     }
+        // }-->
+        </script> 
+        <script>
+        // Función para cargar el contenido del navbar
+        fetch('../../html/home/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbarContainer').innerHTML = data;
+            });
+        
+        // Función para cargar el contenido del footer
+        fetch('../../html/home/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footerContainer').innerHTML = data;
+            });
+        </script>
     </body>
+    
     </html>
