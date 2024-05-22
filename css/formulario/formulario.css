@@ -81,3 +81,8 @@ body {
       color: #dfdfe2
   }
   
+  .error-message {
+    color: red;
+    display: none;
+    margin-top: 5px;
+}
