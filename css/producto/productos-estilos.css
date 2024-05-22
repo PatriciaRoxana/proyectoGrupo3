@@ -115,3 +115,14 @@ footer .redes-sociales a:hover {
         width: 90%; /* El buscador toma más ancho en pantallas pequeñas */
     }
 }
+
+/* Media queries para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+    .producto {
+        width: 90%; /* Los productos toman casi todo el ancho en pantallas muy pequeñas */
+    }
+    
+    #busc-box {
+        width: 95%; /* El buscador toma casi todo el ancho en pantallas muy pequeñas */
+    }
+}

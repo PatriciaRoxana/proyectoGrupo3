@@ -1,45 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
-    <title>Registration Form</title>
+    <title>Formulario de Registro</title>
     <link rel="stylesheet" href="../../css/formulario/formulario.css">
-  </head>
-  <body>
-    <h1>Registration Form</h1>
-    <p>Please fill out this form with the required information</p>
+</head>
+<body>
+    <h1>Formulario de Registro</h1>
+    <p>Por favor, completa este formulario con la información requerida</p>
     <form method="post" action='https://register-demo.freecodecamp.org'>
-      <fieldset>
-        <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
-        <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>
-        <label for="email">Enter Your Email: <input id="email" name="email" type="email" required /></label>
-        <label for="new-password">Create a New Password: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
-      </fieldset>
-      <fieldset>
-        <legend>Account type (required)</legend>
-        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" checked /> Personal</label>
-        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business</label>
-      </fieldset>
-      <fieldset>
-        <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
-        <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13" max="120" /></label>
-        <label for="referrer">How did you hear about us?
-          <select id="referrer" name="referrer">
-            <option value="">(select one)</option>
-            <option value="1">freeCodeCamp News</option>
-            <option value="2">freeCodeCamp YouTube Channel</option>
-            <option value="3">freeCodeCamp Forum</option>
-            <option value="4">Other</option>
-          </select>
+        <fieldset>
+            <label for="first-name">Ingresa tu nombre: <input id="first-name" name="first-name" type="text" required /></label>
+            <label for="last-name">Ingresa tu apellido: <input id="last-name" name="last-name" type="text" required /></label>
+            <label for="email">Ingresa tu correo electrónico: <input id="email" name="email" type="email" required /></label>
+            <label for="new-password">Crea una nueva contraseña: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
+        </fieldset>
+        <fieldset>
+            <legend>Tipo de cuenta (requerido)</legend>
+            <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" checked /> Personal</label>
+            <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Negocios</label>
+        </fieldset>
+        <fieldset>
+            <label for="profile-picture">Sube una foto de perfil: <input id="profile-picture" type="file" name="file" /></label>
+            <label for="age">Ingresa tu edad (años): <input id="age" type="number" name="age" min="13" max="120" /></label>
+            <label for="referrer">¿Cómo te enteraste de nosotros?
+                <select id="referrer" name="referrer">
+                    <option value="">(selecciona uno)</option>
+                    <option value="1">Noticias de freeCodeCamp</option>
+                    <option value="2">Canal de YouTube de freeCodeCamp</option>
+                    <option value="3">Foro de freeCodeCamp</option>
+                    <option value="4">Otro</option>
+                </select>
+            </label>
+            <label for="bio">Proporciona una biografía:
+                <textarea id="bio" name="bio" rows="3" cols="30" placeholder="Me gusta programar en la playa..."></textarea>
+            </label>
+        </fieldset>
+        <label for="terms-and-conditions">
+            <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> Acepto los <a href="https://www.freecodecamp.org/news/terms-of-service/">términos y condiciones</a>
         </label>
-        <label for="bio">Provide a bio:
-          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
-        </label>
-      </fieldset>
-      <label for="terms-and-conditions">
-        <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
-      </label>
-      <input type="submit" value="Submit" />
+        <input type="submit" value="Enviar" />
     </form>
-  </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('registrationForm');
+            
+            form.addEventListener('submit', function (event) {
+                let isValid = true;
+                
+                // Validar nombre
+                const firstName = document.getElementById('first-name');
+                if (firstName.value.trim() === '') {
+                    showError('first-name-error', 'El nombre es obligatorio.');
+                    isValid = false;
+                } else {
+                    hideError('first-name-error');
+                }
+
+                // Validar apellido
+                const lastName = document.getElementById('last-name');
+                if (lastName.value.trim() === '') {
+                    showError('last-name-error', 'El apellido es obligatorio.');
+                    isValid = false;
+                } else {
+                    hideError('last-name-error');
+                }
+
+                // Validar email
+                const email = document.getElementById('email');
+                if (!validateEmail(email.value)) {
+                    showError('email-error', 'Por favor, introduce un correo electrónico válido.');
+                    isValid = false;
+                } else {
+                    hideError('email-error');
+                }
+
+                // Validar contraseña
+                const password = document.getElementById('new-password');
+                const passwordPattern = /^[a-z0-5]{8,}$/;
+                if (!passwordPattern.test(password.value)) {
+                    showError('password-error', 'La contraseña debe tener al menos 8 caracteres y contener solo letras minúsculas y números.');
+                    isValid = false;
+                } else {
+                    hideError('password-error');
+                }
+
+                // Validar edad
+                const age = document.getElementById('age');
+                if (age.value !== '' && (age.value < 13 || age.value > 120)) {
+                    showError('age-error', 'La edad debe estar entre 13 y 120 años.');
+                    isValid = false;
+                } else {
+                    hideError('age-error');
+                }
+
+                if (!isValid) {
+                    event.preventDefault(); // Evitar el envío del formulario si hay errores
+                }
+            });
+
+            function showError(elementId, message) {
+                const element = document.getElementById(elementId);
+                element.textContent = message;
+                element.style.display = 'block';
+            }
+
+            function hideError(elementId) {
+                const element = document.getElementById(elementId);
+                element.textContent = '';
+                element.style.display = 'none';
+            }
+
+            function validateEmail(email) {
+                const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                return re.test(email);
+            }
+        });
+    </script>
+</body>
 </html>
