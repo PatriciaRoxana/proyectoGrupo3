@@ -4,97 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/contacto/Estilo-Contacto.css">
-    <link rel="stylesheet" href=".">
+    <link rel="stylesheet" href="../../css/home/btn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../css/contacto/Estilo-Contacto.css"> <!-- Añadido el estilo del formulario de contacto -->
+    <link rel="stylesheet" href="../../css/home/footer.css"> <!-- Añadido el estilo del footer -->
+    <link rel="stylesheet" href="../../css/home/navbar.css"> <!-- Añadido el estilo del navbar -->
     <title>Contacto</title>
 </head>
+<!-- Contenedor para el navbar -->
+<header id="navbarContainer"></header>
 <body>
-
-    <header>
-        <img src="https://510d0f72b3.cbaul-cdnwnd.com/dfa6a58fd3cda2d5d9daa0e6e36ced22/200000000-a9eb7a9eba/logo.jpeg?ph=510d0f72b3" alt="logo" class="wnd-logo-img">
-        <h1>Omega Perfumes</h1>
-        <nav>
-            <ul>
-                <li><a href="../../html/home/index.html">Inicio</a></li>
-                <li><a href="../../html/productos/productos.html">Productos</a></li>
-                <li><a href="../../html/sobreLaTienda/">Sobre la tienda</a></li>
-                <li><a href="../../html/contacto/">Contacto</a></li>
-            </ul>
-        </nav>
-        
-    </header>
-
-    <main>
-        <div><h2>Nuestros horarios</h2>
-
-            <p>Aquí comienza tu texto. Puedes hacer clic en este punto y empezar a escribir.<strong> </strong>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
-            
-            <p><strong>Lunes - Viernes: </strong> 8am - 6pm<br>
-            <strong>Sábado</strong><strong>: </strong>8am - 12:30pm<br>
-            <strong>Domingo</strong><strong>:</strong> Cerrado</p>
-            </div>
-
-            <div><h2>Contáctanos</h2>
-
-                <p><strong>Dirección:</strong><br>
-                fff 777, BB, 455. </p>
-                
-                <p><strong>Teléfono:</strong><br>
-                78789</p>
-                
-                <p><strong>Email:</strong><br>
-                omegaperfumes@gmail.com<br>
-                &nbsp;</p>
-                </div>
-
+        <section class="contenido1">
+            <div class="Horarios">
+                <h2>Nuestros horarios</h2>
+                <p>Nos complace atenderlos los dias y horarios.</p>
                 <br>
+                <strong>Lunes - Viernes: </strong> 8am - 6pm
+                <br>
+                <strong>Sábado</strong><strong>: </strong>8am - 12:30pm
+                <br>
+                <strong>Domingo</strong><strong>:</strong> Cerrado</p>
+            </div> 
+            </section>
+            
+            <section class="contenido2">
+                <div class="contenido_lectura">
+                    <h2>Contáctanos</h2>
+                    <p><strong>Dirección:</strong><br>
+                        Calle Falsa, 123. </p>
+                        <p><strong>Teléfono:</strong><br>
+                            46357723</p>
+                            <p><strong>Email:</strong><br>
+                                omegaperfumes@gmail.com<br>
+                                &nbsp;</p>
+                            </div>
+                        </section>
+                            
+            <br>
+            <div class="gallery">           
+                <img src="https://d1di2lzuh97fh2.cloudfront.net/files/1l/1le/1leo9c.png?ph=510d0f72b3" alt="foto ilustrativa"> <!-- Corregido el formato de id -->
+                <img src="https://d1di2lzuh97fh2.cloudfront.net/files/3m/3m6/3m6tqi.png?ph=510d0f72b3" alt="foto ilustrativa"> <!-- Corregido el formato de id -->
+            </div>
                 
-                <img id:"imagen1" src="https://d1di2lzuh97fh2.cloudfront.net/files/1l/1le/1leo9c.png?ph=510d0f72b3" alt="foto ilustrativa">
-                <img id:"imagen2" src="https://d1di2lzuh97fh2.cloudfront.net/files/3m/3m6/3m6tqi.png?ph=510d0f72b3" alt="foto ilustrativa">
+            <!-- División para el formulario de contacto -->
+            <div id="contacto-formulario">
+                <h2>Formulario de Contacto</h2>
+                <form id="formulario" onsubmit="return validarFormulario()">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div>
+                        <label for="consulta">Consulta:</label>
+                        <textarea id="consulta" name="consulta" required></textarea>
+                    </div>
+                    <div>
+                        <label for="motivo">Motivo de contacto:</label>
+                        <select id="motivo" name="motivo" required>
+                            <option value="">Seleccionar</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="reclamo">Reclamo</option>
+                            <option value="sugerencia">Sugerencia</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="suscripcion" name="suscripcion">
+                        <label for="suscripcion">Suscribirse al boletín</label>
+                    </div>
+                    <div>
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+        
+    
+    <!-- Contenedor para el footer -->
+    <footer id="footerContainer"></footer>
 
-                   <!-- División para el formulario de contacto -->
-        <div id="contacto-formulario">
-            <h2>Formulario de Contacto</h2>
-            <form id="formulario" onsubmit="return validarFormulario()">
-                <div>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" required>
-                </div>
-                <div>
-                    <label for="consulta">Consulta:</label>
-                    <textarea id="consulta" name="consulta" required></textarea>
-                </div>
-                <div>
-                    <label for="motivo">Motivo de contacto:</label>
-                    <select id="motivo" name="motivo" required>
-                        <option value="">Seleccionar</option>
-                        <option value="consulta">Consulta</option>
-                        <option value="reclamo">Reclamo</option>
-                        <option value="sugerencia">Sugerencia</option>
-                    </select>
-                </div>
-                <div>
-                    <input type="checkbox" id="suscripcion" name="suscripcion">
-                    <label for="suscripcion">Suscribirse al boletín</label>
-                </div>
-                <div>
-                    <input type="submit" value="Enviar">
-                </div>
-            </form>
-        </div>
+    <script>
+        // Función para cargar el contenido del navbar
+        fetch('../../html/home/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbarContainer').innerHTML = data;
+            });
+        
+        // Función para cargar el contenido del footer
+        fetch('../../html/home/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footerContainer').innerHTML = data;
+            });
+    </script>
 
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Nombre de tu empresa. Todos los derechos reservados.</p>
-    </footer>
     <script>
         function validarFormulario() {
             var nombre = document.getElementById("nombre").value;
@@ -114,6 +125,5 @@
             return true; // Envío del formulario si pasa todas las validaciones
         }
     </script>
-
-</body>
-</html>
+  </body>
+  </html>
