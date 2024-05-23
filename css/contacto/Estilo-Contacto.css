@@ -1,7 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: antiquewhite;
+}
+
+/* Estilos para contenido1 y contenido2 */
+.contenedor-sections {
+    display: flex; /* Utilizar flexbox para igualar la altura de los sections */
 }
 
 .contenido1, .contenido2 {
@@ -9,34 +19,33 @@ body {
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 45%; /* Ajuste del ancho */
-    margin: 20px; /* Margen entre los contenidos */
-    display: inline-block; /* Para que estén uno al lado del otro */
-    vertical-align: top; /* Alineación superior */
-}
-
-.contenido1 h2, .contenido2 h2 {
-    margin-top: 0;
+    width: calc(50% - 40px); /* Ajuste del ancho con margen entre ellos */
+    margin: 10px; /* Margen entre los contenidos */
+    box-sizing: border-box; /* Incluye el padding en el ancho */
 }
 
 .gallery {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px 40px;
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+    gap: 16px; /* Espacio entre las imágenes */
+    max-width: 100%; /* Ajustar al ancho del navegador */
+    overflow-x: auto; /* Agregar desplazamiento horizontal si es necesario */
+    padding: 20px 0; /* Ajuste de padding */
 }
 
 .gallery img {
-    width: 800px; /* Tamaño ajustado */
-    height: 800px;
+    max-width: 460px; /* Ajustar el ancho máximo de las imágenes */
+    height: auto; /* Mantener la proporción */
+    border-radius: 8px; /* Puntas redondas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    flex-shrink: 0; /* Evitar que las imágenes se reduzcan más de lo especificado */
 }
+
+/* Estilos para formulario de contacto */
 #contacto-formulario {
     margin-top: 20px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #e0e0e0; /* Color de fondo gris más oscuro */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
