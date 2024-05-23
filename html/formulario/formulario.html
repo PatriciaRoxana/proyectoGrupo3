@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>Formulario de Registro</title>
     <link rel="stylesheet" href="../../css/formulario/formulario.css">
+    
 </head>
 <body>
+    <!-- Contenedor para el navbar -->
+    <header id="navbarContainer"></header>
     <h1>Formulario de Registro</h1>
     <p>Por favor, completa este formulario con la información requerida</p>
     <form method="post" action='https://register-demo.freecodecamp.org'>
@@ -26,14 +29,14 @@
             <label for="referrer">¿Cómo te enteraste de nosotros?
                 <select id="referrer" name="referrer">
                     <option value="">(selecciona uno)</option>
-                    <option value="1">Noticias de freeCodeCamp</option>
-                    <option value="2">Canal de YouTube de freeCodeCamp</option>
-                    <option value="3">Foro de freeCodeCamp</option>
+                    <option value="1">Instagram</option>
+                    <option value="2">Facebook</option>
+                    <option value="3">Conocidos</option>
                     <option value="4">Otro</option>
                 </select>
             </label>
             <label for="bio">Proporciona una biografía:
-                <textarea id="bio" name="bio" rows="3" cols="30" placeholder="Me gusta programar en la playa..."></textarea>
+                <textarea id="bio" name="bio" rows="3" cols="30" placeholder="Algún dato adicional que quiera agregar..."></textarea>
             </label>
         </fieldset>
         <label for="terms-and-conditions">
@@ -41,6 +44,15 @@
         </label>
         <input type="submit" value="Enviar" />
     </form>
+    <script>
+        // Función para cargar el contenido del navbar
+        fetch('../../html/home/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbarContainer').innerHTML = data;
+            });
+        </script>
+        
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('registrationForm');
