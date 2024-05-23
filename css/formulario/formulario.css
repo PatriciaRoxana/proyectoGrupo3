@@ -5,13 +5,14 @@ body {
     background: url(../../img/home/imagen-fondo.avif);
     background-size: cover;
     background-color: #1b1b32;
-    color: rgb(46, 121, 185);
+    color: #1212a8;
     font-family: Tahoma;
     font-size: 26px;
+    font-weight: 800
   }
   
   h1, p {
-    margin: 1em auto;
+    margin: 0.3em auto;
     text-align: center;
   }
   
@@ -78,7 +79,9 @@ body {
   }
   
   a{
-      color: #dfdfe2
+      color: #252335;
+      font-weight: 800
+      
   }
   
   .error-message {
