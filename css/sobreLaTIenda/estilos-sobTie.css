@@ -1,10 +1,13 @@
 
 
-body {
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #e7e0b5; 
-    font-family: 'Arial', sans-serif;
+    
+}
+body{
+    background-color: antiquewhite;
 }
 
 .tituloPrincipal {
@@ -21,6 +24,7 @@ body {
 }
 
 .textoP {
+    grid-template-columns: span 1;
     margin-left: 150px;
     margin-right: 150px;
     white-space: 600px;
@@ -102,4 +106,40 @@ iframe{
     .ImgAlinear{
         margin-bottom: 10px;
     }
+}
+
+@media only screen and (max-width: 752px) {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: antiquewhite;
+    }
+    
+
+    .imagenTienda {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ImgAlinear{
+        width: 350px;
+        height: 250px;
+        margin-bottom: 10px;
+        object-fit: cover;
+    }
+
+    .Img-Item{
+        border: 1px solid brown;
+        display: flex;
+        position: relative;
+        width: 350px;
+        height: 250px;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
 }
