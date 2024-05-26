@@ -1,17 +1,11 @@
-/* estilos globales y colores de fondo */
-body, html {
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #ffd700; 
-    font-family: 'Arial', sans-serif;
+    
 }
-
-/* Estiliza la cabecera */
-header {
-    background-color: #ffffff; /* Fondo blanco para la cabecera */
-    padding: 10px 0;
-    text-align: center;
-}
+body{
+    background-color: antiquewhite;}
 
 h1 {
     color: #000;
