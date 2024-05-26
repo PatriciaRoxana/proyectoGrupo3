@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../../css/formulario/formulario.css" />
   </head>
   <body>
+    <!-- Contenedor para el navbar -->
+    <header id="navbarContainer"></header>
     <h1>Formulario de Registro</h1>
     <p>Por favor, completa este formulario con la información requerida</p>
     <form id="registrationForm">
@@ -103,5 +105,12 @@
       <input type="submit" value="Enviar" />
     </form>
     <script src="../../js/formulario.js"></script>
+    <script>// Función para cargar el contenido del navbar
+      fetch('../../html/home/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbarContainer').innerHTML = data;
+          });
+    </script>
   </body>
 </html>
