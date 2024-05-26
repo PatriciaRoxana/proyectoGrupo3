@@ -1,16 +1,11 @@
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
 }
-
-body {
-    background-color: antiquewhite;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    padding: 20px;
-}
+body{
+    background-color: antiquewhite;}
 
 /* Estilos para contenido1 y contenido2 */
 .contenedor-sections {
@@ -118,11 +113,21 @@ body {
 }
 
 @media (max-width: 768px) {
-    #contacto-formulario form {
-        grid-template-columns: 1fr;
+    .contenedor-sections {
+        flex-direction: column; /* Cambiar la dirección del flex a columna */
+        align-items: center; /* Centrar los elementos verticalmente */
     }
 
-    #contacto-formulario form input[type="submit"] {
-        grid-column: 1;
+    .contenido1,
+    .contenido2 {
+        max-width: calc(100% - 20px); /* Ocupar todo el ancho disponible */
+    }
+
+    .gallery {
+        padding: 20px 0; /* Ajuste de padding */
+    }
+
+    #contacto-formulario form {
+        grid-template-columns: 1fr; /* Cambiar a una columna */
     }
 }
