@@ -108,23 +108,19 @@
     </script>
 
     <script>
-        function validarFormulario() {
-            var nombre = document.getElementById("nombre").value;
-            var email = document.getElementById("email").value;
-            var telefono = document.getElementById("telefono").value;
-            var consulta = document.getElementById("consulta").value;
-            var motivo = document.getElementById("motivo").value;
+      // Función para cargar el contenido del navbar
+      fetch("../../html/home/navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbarContainer").innerHTML = data;
+        });
 
-            // Validación simple de campos obligatorios
-            if (nombre === "" || email === "" || telefono === "" || consulta === "" || motivo === "") {
-                alert("Por favor, complete todos los campos obligatorios.");
-                return false;
-            }
-
-            // Agregar cualquier otra validación necesaria aquí
-
-            return true; // Envío del formulario si pasa todas las validaciones
-        }
+      // Función para cargar el contenido del footer
+      fetch("../../html/home/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footerContainer").innerHTML = data;
+        });
     </script>
   </body>
   </html>

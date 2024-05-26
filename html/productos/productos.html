@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Productos</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
-    <link rel="stylesheet" href="../../css/producto/estilos-modal.css">
-    <link rel="stylesheet" href="../../css/producto/productos-estilos.css">
-    <link rel="stylesheet" href="../../css/home/footer.css">
-    <link rel="stylesheet" href="../../css/home/navbar.css">
-</head>
-
-
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../css/producto/estilos-modal.css" />
+    <link rel="stylesheet" href="../../css/producto/productos-estilos.css" />
+    <link rel="stylesheet" href="../../css/home/footer.css" />
+    <link rel="stylesheet" href="../../css/home/navbar.css" />
+  </head>
+  <body>
     <!-- Contenedor para el navbar -->
     <header id="navbarContainer"></header>
-    
-    <main>
-        
-        <!-- sección de productos buscador -->
-        <section id="seccion-producto">
-            <div class="search-box-container">
-                <input type="text" id="busc-box" placeholder="Buscar productos...">
-                <button id="search-button"><i class="fas fa-search"></i> Buscar</button>
-            </div>
-            <div class="producto-container">
 
                 
                 
@@ -90,94 +80,121 @@
                 </ul>
             </div>
         </div>
-        
-    </footer> -->
+        <div class="producto-container">
+          <!-- Producto 1 -->
+          <div
+            class="producto"
+            data-name="Ambientadores para Salón"
+            data-descripcion-producto="Perfume Ambientadores para Salón.."
+          >
+            <img
+              src="../../img/producto/Ambientadores-para-Salón.jpg"
+              alt="Ambientadores para Salón"
+            />
+            <h3 class="titulo-producto">Ambientadores para Salón</h3>
+            <p class="producto-precio">399,00 ARS</p>
+          </div>
+          <!-- Producto 2 -->
+          <div
+            class="producto"
+            data-name="Aromatizante en Aerosol Saphirus - Bebe"
+            data-descripcion-producto="Aromatizante en Aerosol Saphirus - Bebe"
+          >
+            <img
+              src="../../img/producto/Aromatizante-en-Aerosol-Saphirus-Bebe.jpg"
+              alt="Aromatizante en Aerosol Saphirus - Bebe"
+            />
+            <h3 class="titulo-producto">
+              Aromatizante en Aerosol Saphirus - Bebe
+            </h3>
+            <p class="producto-precio">399,00 ARS</p>
+          </div>
+          <!-- Producto 3 -->
+          <div
+            class="producto"
+            data-name="Home Spray Clean Cotton"
+            data-descripcion-producto="Home Spray Clean Cotton"
+          >
+            <img
+              src="../../img/producto/Home-Spray-Clean-Cotton.jpg"
+              alt="Home Spray Clean Cotton"
+            />
+            <h3 class="titulo-producto">Home Spray Clean Cotton</h3>
+            <p class="producto-precio">399,00 ARS</p>
+          </div>
+          <!-- Producto 4 -->
+          <div
+            class="producto"
+            data-name="Pack Colección Pop Bubble Gum"
+            data-descripcion-producto="Pack Colección Pop Bubble Gum"
+          >
+            <img
+              src="../../img/producto/Pack-Colección-Pop-Bubble-Gum.jpg"
+              alt="Pack Colección Pop Bubble Gum"
+            />
+            <h3 class="titulo-producto">Pack Colección Pop Bubble Gum</h3>
+            <p class="producto-precio">399,00 ARS</p>
+          </div>
+          <!-- Producto 5 -->
+          <div
+            class="producto"
+            data-name="Pack Regalo Pop Bubble Gum"
+            data-descripcion-producto="Pack Regalo Pop Bubble Gum"
+          >
+            <img
+              src="../../img/producto/Pack-Regalo-Pop-Bubble-Gum.jpg"
+              alt="Pack Regalo Pop Bubble Gum"
+            />
+            <h3 class="titulo-producto">Pack Regalo Pop Bubble Gum</h3>
+            <p class="producto-precio">399,00 ARS</p>
+          </div>
+          <!-- Producto 6 -->
+          <div
+            class="producto"
+            data-name="Perfume Hogar y Telas Caramel"
+            data-descripcion-producto="Perfume Hogar y Telas Caramel"
+          >
+            <img
+              src="../../img/producto/perfume-hogar-y-telas-caramel.jpg"
+              alt="Perfume Hogar y Telas Caramel"
+            />
+            <h3 class="titulo-producto">Perfume Hogar y Telas Caramel</h3>
+            <p class="producto-precio">399,00 ARS</p>
+          </div>
+          <!-- Producto 7 -->
+          <div
+            class="producto"
+            data-name="Velentino Perfume"
+            data-descripcion-producto="Velentino Perfume"
+          >
+            <img
+              src="../../img/producto/Velentino-Perfume.jpg"
+              alt="Velentino Perfume"
+            />
+            <h3 class="titulo-producto">Velentino Perfume</h3>
+            <p class="producto-precio">399,00 ARS</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Contenedor para el footer -->
+    <div id="footerContainer"></div>
     <!-- Contenedor del Modal  -->
     <div id="modal" class="modal">
-        <div class="modal-contenido">
-            <span class="cerrar">&times;</span>
-            <img id="modal-img" src="" alt="Producto">
-            <h3 id="modal-titulo">Nombre del Producto</h3>
-            <p id="modal-description">Descripción </p>
-            <p id="modal-precio">Precio</p>
-            <input type="number" id="modal-cantidad" min="1" value="1">
-            <button id="modal-agregar-carrito">Agregar al Carrito</button>
-        </div>
+      <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <img
+          id="modal-img"
+          src="../../img/producto/default.jpg"
+          alt="Producto"
+        />
+        <h3 id="modal-titulo">Nombre del Producto</h3>
+        <p id="modal-description">Descripción</p>
+        <p id="modal-precio">Precio</p>
+        <input type="number" id="modal-cantidad" min="1" value="1" />
+        <button id="modal-agregar-carrito">Agregar al Carrito</button>
+      </div>
     </div>
-    </body>
-    </html>
-    
-
-    
-        <script>
-    
-        document.addEventListener('DOMContentLoaded', function() {
-        var productos = document.querySelectorAll('.producto');
-        var modal = document.getElementById('modal');
-        var modalImg = document.getElementById('modal-img');
-        var modalTitulo = document.getElementById('modal-titulo');
-        var modalDescription = document.getElementById('modal-description'); // Agregar esta línea
-        var modalPrecio = document.getElementById('modal-precio');
-        var cerrarModal = document.querySelector('.cerrar'); // Cambiar a querySelector y '.cerrar'
-
-        function openModal(producto) {
-            modal.style.display = "block";
-            modalImg.src = producto.querySelector('img').src;
-            modalTitulo.textContent = producto.querySelector('.titulo-producto').textContent;
-            modalPrecio.textContent = producto.querySelector('.producto-precio').textContent;
-            modalDescription.textContent = producto.getAttribute('descripcion-producto');
-        }
-
-        productos.forEach(function(producto) {
-            producto.addEventListener('click', function() {
-                openModal(producto);
-            });
-        });
-
-        cerrarModal.addEventListener('click', function() {
-            modal.style.display = "none";
-        });
-
-        window.addEventListener('click', function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        });
-    });
-
-
-        //     <!--function buscarProductos() {
-        //     var input, filter, productos, producto, i, txtValue;
-        //     input = document.getElementById('search-box');
-        //     filter = input.value.toUpperCase();
-        //     productos = document.getElementById('productos');
-        //     producto = productos.getElementsByClassName('producto-item');
-        
-        //     for (i = 0; i < producto.length; i++) {
-        //         txtValue = producto[i].textContent || producto[i].innerText;
-        //         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        //             producto[i].style.display = "";
-        //         } else {
-        //             producto[i].style.display = "none";
-        //         }
-        //     }
-        // }-->
-        </script> 
-        <script>
-        // Función para cargar el contenido del navbar
-        fetch('../../html/home/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbarContainer').innerHTML = data;
-            });
-        
-        // Función para cargar el contenido del footer
-        fetch('../../html/home/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footerContainer').innerHTML = data;
-            });
-        </script>
-    </body>
-    
-    </html>
+    <script src="../../js/productos.js"></script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Formulario de Registro</title>
     <link rel="stylesheet" href="../../css/formulario/formulario.css">
     
@@ -42,7 +42,33 @@
         <label for="terms-and-conditions">
             <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> Acepto los <a href="https://www.freecodecamp.org/news/terms-of-service/">términos y condiciones</a>
         </label>
-        <input type="submit" value="Enviar" />
+        <span id="referrer-error" class="error-message"></span>
+        <label for="bio"
+          >Proporciona una biografía:
+          <textarea
+            id="bio"
+            name="bio"
+            rows="3"
+            cols="30"
+            placeholder="Me gusta programar en la playa..."
+          ></textarea>
+        </label>
+      </fieldset>
+      <label for="terms-and-conditions">
+        <input
+          class="inline"
+          id="terms-and-conditions"
+          type="checkbox"
+          required
+          name="terms-and-conditions"
+        />
+        Acepto los
+        <a href="https://www.freecodecamp.org/news/terms-of-service/"
+          >términos y condiciones</a
+        >
+      </label>
+      <span id="terms-error" class="error-message"></span>
+      <input type="submit" value="Enviar" />
     </form>
     <script>
         // Función para cargar el contenido del navbar

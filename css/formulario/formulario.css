@@ -89,3 +89,10 @@ body {
     display: none;
     margin-top: 5px;
 }
+
+
+.valid-message {
+  color: green;
+  display: none;
+  margin-top: 5px;
+}
