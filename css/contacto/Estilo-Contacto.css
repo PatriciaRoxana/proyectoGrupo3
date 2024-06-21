@@ -40,94 +40,50 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
     flex-shrink: 0; /* Evitar que las imágenes se reduzcan más de lo especificado */
 }
-
-/* Estilos para formulario de contacto */
-#contacto-formulario {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #ffffff; /* Color de fondo blanco */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
-}
-
-#contacto-formulario h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #007bff;
-    text-align: center;
-}
-
-#contacto-formulario form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-#contacto-formulario form div {
-    display: flex;
-    flex-direction: column;
-}
-
-#contacto-formulario form label {
-    margin-bottom: 5px;
-    color: #333;
-    font-weight: bold;
-}
-
-#contacto-formulario form input[type="text"],
-#contacto-formulario form input[type="email"],
-#contacto-formulario form input[type="tel"],
-#contacto-formulario form textarea,
-#contacto-formulario form select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-#contacto-formulario form input[type="text"]:focus,
-#contacto-formulario form input[type="email"]:focus,
-#contacto-formulario form input[type="tel"]:focus,
-#contacto-formulario form textarea:focus,
-#contacto-formulario form select:focus {
-    border-color: #007bff;
-}
-
-#contacto-formulario form input[type="submit"] {
-    grid-column: span 2;
-    padding: 15px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-}
-
-#contacto-formulario form input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
+@media (min-width: 992px) {
     .contenedor-sections {
-        flex-direction: column; /* Cambiar la dirección del flex a columna */
-        align-items: center; /* Centrar los elementos verticalmente */
+        flex-direction: row;
     }
 
-    .contenido1,
-    .contenido2 {
-        max-width: calc(100% - 20px); /* Ocupar todo el ancho disponible */
+    .contenido1, .contenido2 {
+        flex: 1 1 calc(50% - 20px); 
+    }
+}
+
+/* Estilos específicos para tablets (entre 768px y 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .contenedor-sections {
+        flex-direction: column;
+    }
+
+    .contenido1, .contenido2 {
+        flex: 1 1 100%; 
     }
 
     .gallery {
-        padding: 20px 0; /* Ajuste de padding */
+        flex-direction: column;
     }
 
-    #contacto-formulario form {
-        grid-template-columns: 1fr; /* Cambiar a una columna */
+    .gallery img {
+        max-width: 100%; 
+    }
+}
+
+/* Estilos específicos para smartphones (menos de 768px) */
+@media (max-width: 767px) {
+    .contenedor-sections {
+        flex-direction: column;
+    }
+
+    .contenido1, .contenido2 {
+        flex: 1 1 100%; 
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+
+    .gallery img {
+        max-width: 100%; 
     }
 }
