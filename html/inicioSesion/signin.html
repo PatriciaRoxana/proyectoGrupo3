@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="../../css/inicioSesion/signin.css" />
+    <link rel="stylesheet" href="../../css/home/navbar.css">
   </head>
+  <header id="navbarContainer"></header>
   <body>
     <div class="login-box">
       <img class="avatar" src="../../img/home/logo.jpeg" alt="logo" />
@@ -33,5 +35,13 @@
         <a href="#">Don’t have an account</a>
       </form>
     </div>
+    <script>
+      // Función para cargar el contenido del navbar
+      fetch('../../html/home/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbarContainer').innerHTML = data;
+          });</script>
+          
   </body>
 </html>

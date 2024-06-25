@@ -24,6 +24,42 @@ h1 {
     font-size: 16px;
 }
 
+/* Estilos para el filtro por tipo */
+.filter-box-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  #filter-select {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 25px;
+    background-color: #ecf0f1;
+    color: #3498db;
+    appearance: none; /* Elimina el estilo nativo del select en algunos navegadores */
+    -webkit-appearance: none; /* Para navegadores basados en WebKit */
+    -moz-appearance: none; /* Para navegadores basados en Gecko */
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  #filter-select:hover, #filter-select:focus {
+    border-color: #2980b9;
+    color: #2980b9;
+  }
+  
+  /* Estilos para las opciones del filtro */
+  #filter-select option {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #filter-select option:hover {
+    background-color: #f2f2f2;
+  }
+  
 /* Contenedor para los productos */
 .producto-container {
     display: flex;
