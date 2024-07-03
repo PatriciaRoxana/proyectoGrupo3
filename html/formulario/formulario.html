@@ -7,21 +7,6 @@
     <link rel="stylesheet" href="../../css/home/navbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Estilos adicionales para la tabla y el formulario */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 15px;
-            text-align: left;
-        }
-        form {
-            margin: 20px 0;
-        }
         .container {
             margin: 20px;
         }
@@ -44,20 +29,6 @@
             <input type="submit" value="Enviar" />
         </form>
         <div id="error-message" class="error-message"></div>
-
-        <h2>Datos Recibidos</h2>
-        <table id="dataTable">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Los datos se agregarán aquí dinámicamente -->
-            </tbody>
-        </table>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -88,7 +59,7 @@
 
                 if (isValid) {
                     const formData = new FormData(form);
-                    fetch('http://localhost:5000/modify', {
+                    fetch('http://localhost:5000/register', {
                         method: 'POST',
                         body: formData
                     })
@@ -100,7 +71,7 @@
                     })
                     .then(data => {
                         alert('Formulario enviado exitosamente!');
-                        fetchData();
+                        form.reset(); // Limpiar el formulario después de enviar
                     })
                     .catch(error => {
                         if (error.status === 404) {
@@ -117,43 +88,6 @@
                     });
                 }
             });
-
-            function fetchData() {
-                fetch('http://localhost:5000/data')
-                .then(response => response.json())
-                .then(data => {
-                    const tableBody = document.querySelector('#dataTable tbody');
-                    tableBody.innerHTML = '';
-                    data.forEach((item) => {
-                        const row = `<tr>
-                            <td>${item['first-name']}</td>
-                            <td>${item.email}</td>
-                            <td>
-                                <button onclick="editData(${item.id})">Editar</button>
-                                <button onclick="deleteData(${item.id})">Eliminar</button>
-                            </td>
-                        </tr>`;
-                        tableBody.innerHTML += row;
-                    });
-                });
-            }
-
-            function deleteData(id) {
-                fetch(`http://localhost:5000/delete/${id}`, {
-                    method: 'POST'
-                })
-                .then(() => fetchData());
-            }
-
-            function editData(id) {
-                fetch(`http://localhost:5000/edit/${id}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('first-name').value = data['first-name'];
-                    document.getElementById('email').value = data.email;
-                    // Para manejar contraseñas, podrías necesitar otros campos o un modal
-                });
-            }
 
             function showError(elementId, message) {
                 let element = document.getElementById(elementId);
@@ -185,15 +119,12 @@
                 return re.test(email);
             }
 
-            // Cargar datos iniciales
-            fetchData();
-        });
-
-        // Función para cargar el contenido del navbar
-        fetch('../../html/home/navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbarContainer').innerHTML = data;
+            // Función para cargar el contenido del navbar
+            fetch('../../html/home/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbarContainer').innerHTML = data;
+            });
         });
     </script>
 </body>
